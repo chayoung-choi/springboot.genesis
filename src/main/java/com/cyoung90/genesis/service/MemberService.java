@@ -5,11 +5,14 @@ import java.util.Optional;
 
 import com.cyoung90.genesis.domain.Member;
 import com.cyoung90.genesis.repository.MemberRepository;
-import com.cyoung90.genesis.repository.MemoryMemberRepository;
 
 public class MemberService {
-	private final MemberRepository memberReopsitory = new MemoryMemberRepository();
+	private final MemberRepository memberReopsitory;
 
+	public MemberService(MemberRepository memberReopsitory) {
+		this.memberReopsitory = memberReopsitory;
+	}
+	
 	/**
 	 * 회원 가입 
 	 */
