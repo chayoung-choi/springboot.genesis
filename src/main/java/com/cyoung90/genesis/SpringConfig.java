@@ -6,7 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.cyoung90.genesis.repository.JdbcMemberRepository;
+import com.cyoung90.genesis.repository.JdbcTemplateMemberRepository;
 import com.cyoung90.genesis.repository.MemberRepository;
 import com.cyoung90.genesis.service.MemberService;
 
@@ -27,6 +27,7 @@ public class SpringConfig {
 	@Bean
 	public MemberRepository memberRepository() {
 //		return new MemoryMemberRepository();
-		return new JdbcMemberRepository(dataSource);
+//		return new JdbcMemberRepository(dataSource);
+		return new JdbcTemplateMemberRepository(dataSource);
 	}
 }
